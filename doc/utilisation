@@ -1,0 +1,43 @@
+ESUP Monitor
+
+la servlet Monitor, installée sur le portail ESUP par défaut, propage sous forme de flux XML des informations sur l’état de son serveur .
+
+* nom du serveur 
+* url du serveur 
+* mémoire libre 
+* mémoire totale 
+* mémoire maximum. 
+* liste des utilisateurs connectés 
+
+- La portlet monitor lit ce flux xml et l'affiche. 
+
+- le fichier listeServers.xml permet de renseigner les noms des serveurs que l'on souhaite observer, il faut donc le paramétrer. 
+( /esup-portlet-monitor/portlet-monitor-web-springmvc-portlet/src/main/resources/listeServers.xml) 
+
+Afin de  pouvoir utiliser cette portlet  .
+A partir des sources :
+Dans Eclipse 
+ File => new => project => project... => Maven => Maven Project 
+ajouter un projet existant .
+modifier le fichier  listeServers.xml.
+( /esup-portlet-monitor/portlet-monitor-web-springmvc-portlet/src/main/resources/listeServers.xml)
+
+Constituer un war avec la commande suivante : 
+run as maven install. 
+Building war :
+. . . /esup-portlet-monitor/portlet-monitor-web-springmvc-portlet/target/portlet-monitor.war
+
+Aller dans le répertoire d'installation du portail et lancer la commande : 
+ant portlet.deploy -DportletApp=. . . /esup-portlet-monitor/portlet-monitor-web-springmvc-portlet/target/portlet-monitor.war
+
+Dans Tomcat/conf/server.xml , ajouter un Context :
+
+<Context path="/portlet-monitor" 
+	docBase=" . . . /webapps/portlet-monitor" 
+	reloadable="false">
+      <Manager pathname=""/>
+</Context>
+
+Démarrer le portail.
+
+
