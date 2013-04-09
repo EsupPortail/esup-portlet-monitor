@@ -16,7 +16,7 @@ import java.util.List;
  * 
  */
 
-public class ServerInfo implements XMLSerializable {
+public class ServerInfo  {
 
 
     private String name = null;
@@ -113,29 +113,5 @@ public class ServerInfo implements XMLSerializable {
         if(!users.contains(user)) {
             users.add(user);
         }
-    }
-    
-    /**
-     *
-     */
-    public String toXMLString() {
-        StringBuffer xml = new StringBuffer();
-        xml.append("<server name=\"");
-        xml.append(getName());
-        xml.append("\" url=\"");
-        xml.append(getUrl());
-        xml.append("\" >\n");
-        xml.append(getSession().toXMLString());
-        xml.append(getMemory().toXMLString());
-        xml.append("<users>\n");
-        for(Iterator i = getUsers().iterator();i.hasNext();) {
-            String user = (String)i.next();
-            xml.append("<user id=\"");
-            xml.append(user);
-            xml.append("\" />\n");
-        }
-        xml.append("</users>\n");
-        xml.append("</server>\n");
-        return xml.toString();
     }
 }

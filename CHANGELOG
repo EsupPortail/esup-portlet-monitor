@@ -1,0 +1,18 @@
+######################################################
+# Modifications apportées
+# testé sur un esup-uportal basé sur uPortal 4.0.9.1
+# sur les EsupMonitor de portail V3 et portail V4
+######################################################
+
+- Modification du view.jsp 
+	* affichage des informations sous forme de tableau
+	* affichage du nom des personnes connectées seulement sur demande dans une ligne du tableau
+	* possibilité de ne plus afficher la liste des personnes connectées
+- Modification des fichiers de messages	
+- Modification du controller MemoryInfo
+	* Utilisation de la wrapNumericValue dans les "setter" - anciennement utilisée dans la version canal pour générer le XML
+	* Modification de la methode wrapNumericValue en ToMegaOctet pour transformer en Mo les valeurs retournees par le flux XML 
+	* Retrait d'implémentation de l'interface XMLSerialisable - reliquat de la version canal
+- Modification des controllers SessionInfo et ServerInfo
+	* Retrait d'implémentation de l'interface XMLSerialisable - reliquat de la version canal
+- Retrait de l'interface XMLSerialisable - reliquat de la version canal

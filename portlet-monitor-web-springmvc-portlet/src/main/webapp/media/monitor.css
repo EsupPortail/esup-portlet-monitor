@@ -1,0 +1,19 @@
+.inline{
+	list-style: none;
+	display: inline; 
+}
+
+ul.colonne {
+    width: 100%;
+}
+ul.colonne li {
+    /*display: block;*/
+    float: left;
+    height: 15px;
+    width: 15%;
+    /*list-style-image : url(/portlet-monitor/media/images/puce.png);*/
+    list-style: none;
+}
+ul.colonne li[float="left"] + li {
+    float: none;
+}

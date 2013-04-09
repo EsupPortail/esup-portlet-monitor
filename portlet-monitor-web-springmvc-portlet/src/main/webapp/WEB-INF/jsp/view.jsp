@@ -10,32 +10,57 @@
 
 <div class="portlet-section-body">
 
-	<ul>
+	<table align="left" width="100%" >
+		<tr id="titre">
+			<th>Nom Serveur</th>
+			<th colspan="3">Mémoire</th>
+			<th colspan="3">Sessions</th>
+		</tr>
+		<tr id="titre2">
+			<th></th>
+			<th>Maximum (Mo)</th>
+			<th>Total (Mo)</th>
+			<th>Libre (Mo)</th>
+			<th>Total</th>
+			<th>Anonymes</th>
+			<th>Connectes</th>
+		</tr>
 		<c:forEach var="task" items="${liste_serveurs}">
-			<li><spring:message code="view.NomServeur"
-					arguments="${task.name}" />
-			</li>
-			<li><spring:message code="view.urlServeur"
-					arguments="${task.url}" />
-			</li>
-			<li><spring:message code="view.MemoireLibre"
-					arguments="${task.memory.free}" />
-			</li>
-			<li><spring:message code="view.MemoireMax"
-					arguments="${task.memory.max}" />
-			</li>
-			<li><spring:message code="view.MemoireTotale"
-					arguments="${task.memory.total}" />
-			</li>
-			<ul>
-				<c:forEach var="task_users" items="${task.users}">
-					<c:forEach var="user_id" items="${task_users}">
-						<li><spring:message code="view.User" arguments="${user_id}" />
-						</li>
-					</c:forEach>
-				</c:forEach>
-			</ul>
+			<tr>
+
+				<td>${task.name} (${fn:substringBefore(task.url,"/EsupMonitor")})</td>
+				<td align="center">${task.memory.max}</td>
+				<td align="center">${task.memory.total}</td>
+				<td align="center">${task.memory.free}</td>
+				<td align="center">${task.session.total}</td>
+				<td align="center">${task.session.guest}</td>
+				<td align="center">${task.session.connected}
+					<c:if
+						test="${fn:length(task.users)>1}">
+						<img 
+							src="/portlet-monitor/media/images/affich.png"
+							alt="Afficher la liste des utilisateurs" 
+							class="affichListe" />
+						<img style="display: none;"
+							src="/portlet-monitor/media/images/noAffich.png"
+							alt="Ne plus afficher la liste des utilisateurs"
+							class="noAffichListe" />	
+					</c:if>
+				</td>
+			</tr>
+			<tr style="display: none;" class="trToAffich">
+				<td colspan="7">
+					<ul class="colonne">
+						<c:forEach var="task_users" items="${task.users}">
+							<c:forEach var="user_id" items="${task_users}">
+							<c:if test="${not (fn:containsIgnoreCase(user_id,'guest'))}">
+								<li>> ${user_id}</li>
+							</c:if>	
+							</c:forEach>
+						</c:forEach>
+					</ul></td>
+			</tr>
 		</c:forEach>
-	</ul>
+	</table>
 
 </div>

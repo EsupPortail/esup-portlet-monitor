@@ -11,7 +11,7 @@ package org.esupportail.monitor.web.tools;
  * 
  */
 
-public class MemoryInfo implements XMLSerializable {
+public class MemoryInfo {
 
 
     private String max = null;
@@ -37,7 +37,8 @@ public class MemoryInfo implements XMLSerializable {
      * @param max
      */
     public void setMax(String max) {
-        this.max = max;
+    //	System.out.println("max avant traitement::"+max);
+    	this.max = ToMegaOctet(max);
     }
     
     /**
@@ -53,7 +54,8 @@ public class MemoryInfo implements XMLSerializable {
      * @param total
      */
     public void setTotal(String total) {
-        this.total = total;
+    //	System.out.println("total avant traitement::"+total);
+        this.total = ToMegaOctet(total);
     }
     
     /**
@@ -69,7 +71,8 @@ public class MemoryInfo implements XMLSerializable {
      * @param free
      */
     public void setFree(String free) {
-        this.free = free;
+    //	System.out.println("free avant traitement::"+free);
+    	this.free = ToMegaOctet(free);
     }
     
     /**
@@ -77,27 +80,17 @@ public class MemoryInfo implements XMLSerializable {
      * @param s La chaine à modifier
      * @return s La chaine modifiée
      */
-    private String wrapNumericValue(String s) {
-        StringBuffer res = new StringBuffer();
-        for(int i=7;i<=s.length();i++) {
-            res.append(s.charAt(s.length() - i));
-        }
-        res = res.reverse();
-        return res.toString();
+    private String ToMegaOctet(String s) {
+    	Float test = Float.valueOf(s);
+    	//System.out.println("test de transformation en Float :: "+test);
+    	Float res = test / 1024;
+    	//System.out.println("test de division:: "+res);
+    	res = res / 1024 ;
+    //	System.out.println("2eme test de division:: "+res);
+    	Integer result = new Integer(res.intValue());
+    //	System.out.println("en entier:: "+result);
+    //	System.out.println("en String:: "+result.toString());
+    	return result.toString();
     }
-    
-    /**
-     *
-     */
-    public String toXMLString() {
-        StringBuffer xml = new StringBuffer();
-        xml.append("<memory max=\"");
-        xml.append(wrapNumericValue(getMax()));
-        xml.append("\" total=\"");
-        xml.append(wrapNumericValue(getTotal()));
-        xml.append("\" free=\"");
-        xml.append(wrapNumericValue(getFree()));
-        xml.append("\" />\n");
-        return xml.toString();
-    }
+ 
 }

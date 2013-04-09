@@ -13,7 +13,7 @@ package org.esupportail.monitor.web.tools;
  * 
  */
 
-public class SessionInfo implements XMLSerializable {
+public class SessionInfo  {
 
     
     private String connected = null;
@@ -74,15 +74,4 @@ public class SessionInfo implements XMLSerializable {
         this.total = total;
     }
 
-    public String toXMLString() {
-        StringBuffer xml = new StringBuffer();
-        xml.append("<sessions connected=\"");
-        xml.append(getConnected());
-        xml.append("\" guest=\"");
-        xml.append(getGuest());
-        xml.append("\" total=\"");
-        xml.append(getTotal());
-        xml.append("\" />\n");
-        return xml.toString();
-    }
 }
