@@ -1,16 +1,35 @@
+/**
+ * Copyright  2002-2013 ESUP-portail consortium
+ * This program is free software; you can redistribute 
+ * it and/or modify it under the terms of the GNU 
+ * General Public License as published by the Free 
+ * Software Foundation augmented according to the
+ * possibility of using it with programs developped under 
+ * the Apache licence published by the Apache Software Foundation.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ *  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * See the license terms site for more details : 
+ * http://www.esup-portail.org/license.html
+ */
 package org.esupportail.monitor.web.tools;
 
-/**
- * MemoryInfo<br>
- * <br>
- * Description<br>
- * <br>
- * (c)Copyright <a href="http://www.esup-portail.org">ESup-Portail 2004</a><br>
- * @author <a href="mailto:mathieu.larchet@univ-nancy2.fr">Mathieu Larchet</a>
- * @version $Revision: 1.0$
- * 
- */
 
+/**
+ * 
+ * Description : Les informations sur les memoires <br/>
+ * 
+ * @version Id : MemoryInfo.java, V2.0, mars 2013<br/>
+ *          Copyright (c) 2002-2013 Esup Portail (www.esup-portail.org)<br/>
+ *          Classe(s) : MemoryInfo <br/>
+ * @author : Mathieu Larchet - Eric Doual - Doriane Duvivier 
+ */
 public class MemoryInfo {
 
 
@@ -37,7 +56,6 @@ public class MemoryInfo {
      * @param max
      */
     public void setMax(String max) {
-    //	System.out.println("max avant traitement::"+max);
     	this.max = ToMegaOctet(max);
     }
     
@@ -54,7 +72,6 @@ public class MemoryInfo {
      * @param total
      */
     public void setTotal(String total) {
-    //	System.out.println("total avant traitement::"+total);
         this.total = ToMegaOctet(total);
     }
     
@@ -71,7 +88,6 @@ public class MemoryInfo {
      * @param free
      */
     public void setFree(String free) {
-    //	System.out.println("free avant traitement::"+free);
     	this.free = ToMegaOctet(free);
     }
     
@@ -82,14 +98,9 @@ public class MemoryInfo {
      */
     private String ToMegaOctet(String s) {
     	Float test = Float.valueOf(s);
-    	//System.out.println("test de transformation en Float :: "+test);
     	Float res = test / 1024;
-    	//System.out.println("test de division:: "+res);
     	res = res / 1024 ;
-    //	System.out.println("2eme test de division:: "+res);
     	Integer result = new Integer(res.intValue());
-    //	System.out.println("en entier:: "+result);
-    //	System.out.println("en String:: "+result.toString());
     	return result.toString();
     }
  

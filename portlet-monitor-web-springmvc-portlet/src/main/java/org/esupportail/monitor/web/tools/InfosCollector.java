@@ -1,3 +1,23 @@
+/**
+ * Copyright  2002-2013 ESUP-portail consortium
+ * This program is free software; you can redistribute 
+ * it and/or modify it under the terms of the GNU 
+ * General Public License as published by the Free 
+ * Software Foundation augmented according to the
+ * possibility of using it with programs developped under 
+ * the Apache licence published by the Apache Software Foundation.
+ * 
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+ *  IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY 
+ * CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+ * TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE 
+ * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * 
+ * See the license terms site for more details : 
+ * http://www.esup-portail.org/license.html
+ */
 package org.esupportail.monitor.web.tools;
 
 import java.io.IOException;
@@ -10,16 +30,19 @@ import org.xml.sax.SAXException;
 
 import org.esupportail.commons.services.logging.Logger;
 import org.esupportail.commons.services.logging.LoggerImpl;
+
+
 /**
- * InfosCollector<br>
- * <br>
- * Description<br>
- * <br>
- * (c)Copyright <a href="http://www.esup-portail.org">ESup-Portail 2004</a><br>
- * @author <a href="mailto:mathieu.larchet@univ-nancy2.fr">Mathieu Larchet</a>
- * @version $Revision: 1.0$
  * 
+ * Description : Recuperation des informations du
+ * fichier de configuration <br/>
+ * 
+ * @version Id : InfosCollector.java, V2.0, mars 2013<br/>
+ *          Copyright (c) 2002-2013 Esup Portail (www.esup-portail.org)<br/>
+ *          Classe(s) : InfosCollector <br/>
+ * @author : Mathieu Larchet - Eric Doual - Doriane Duvivier 
  */
+
 
 public class InfosCollector {
     
