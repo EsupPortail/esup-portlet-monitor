@@ -34,6 +34,16 @@ import org.springframework.web.portlet.ModelAndView;
 
 import org.esupportail.monitor.web.tools.*;
 
+/**
+ * 
+ * Description : Controller principal <br/>
+ * 
+ * @version Id : WebController.java, V1.0, mars 2013<br/>
+ *          Copyright (c) 2002-2013 Esup Portail (www.esup-portail.org)<br/>
+ *          Classe(s) : WebController <br/>
+ * @author : Eric Doual - Doriane Duvivier 
+ */
+
 @Controller
 public class WebController extends AbstractExceptionController {
 
