@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
-	<server name="ENT_Test" url="http://localhost/uPortal/EsupMonitor" />
+	<server name="server1" url="http://localhost/uPortal/EsupMonitor" />
 </config>
