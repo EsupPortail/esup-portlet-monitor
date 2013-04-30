@@ -4,7 +4,7 @@
     <parent>
         <artifactId>portlet-monitor</artifactId>
         <groupId>org.esup.portail</groupId>
-        <version>0.1-SNAPSHOT</version>
+        <version>0.1</version>
     </parent>
     <groupId>org.esup.portail</groupId>
     <artifactId>portlet-monitor-domain-services</artifactId>
