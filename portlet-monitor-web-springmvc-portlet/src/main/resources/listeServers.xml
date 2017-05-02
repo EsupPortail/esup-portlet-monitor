@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <config>
-	<server name="ENT_0" url="http://ent4.univ-valenciennes.fr/EsupMonitor" />
-	<server name="ENT_1" url="http://ent5.univ-valenciennes.fr/EsupMonitor" />
-	<server name="ENT_2" url="http://ent6.univ-valenciennes.fr/EsupMonitor" />
-	<server name="ENT_serv" url="http://entserv.univ-valenciennes.fr/EsupMonitor" />
-    <server name="ENT_dev" url="http://portail-dev.univ-valenciennes.fr/EsupMonitor" />
-    <server name="ENT_test" url="http://portail-test.univ-valenciennes.fr/EsupMonitor" />
+    <server name="ENT_test" url="http://ent-test.univ-xxx.fr/EsupMonitor" />
 </config>

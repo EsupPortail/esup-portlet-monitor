@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.esup.portail</groupId>
     <artifactId>portlet-monitor</artifactId>
-    <version>0.2</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
     <description>portlet permettant d'afficher dans le portail les informations de la servlet ESUPMonitor</description>
     <repositories>
@@ -116,9 +116,10 @@
     <properties>
         <esupcommons.version>0.3.4</esupcommons.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.version>1.0.0</project.version>
+        <project.artifactId>portlet-monitor</project.artifactId>
     </properties>
   <modules>
-    <module>portlet-monitor-utils</module>
     <module>portlet-monitor-domain-beans</module>
     <module>portlet-monitor-domain-services</module>
     <module>portlet-monitor-web-springmvc-portlet</module>
