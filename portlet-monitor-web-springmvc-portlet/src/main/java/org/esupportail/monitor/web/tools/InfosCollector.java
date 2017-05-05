@@ -21,15 +21,17 @@
 package org.esupportail.monitor.web.tools;
 
 import java.io.IOException;
+import java.net.CookieHandler;
+import java.net.CookieManager;
+import java.net.CookiePolicy;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.apache.commons.digester3.Digester;
-import org.xml.sax.InputSource;
-import org.xml.sax.SAXException;
-
 import org.esupportail.commons.services.logging.Logger;
 import org.esupportail.commons.services.logging.LoggerImpl;
+import org.xml.sax.InputSource;
+import org.xml.sax.SAXException;
 
 
 /**
@@ -53,8 +55,12 @@ public class InfosCollector {
      * @param s L'objet à remplit
      * @return status vrai si tout se passe bien, faux sinon
      */
+	
+	
     public static boolean fetch(ServerInfo s, boolean users) {
-        
+    	//Ajout pour uPortal 4.3
+    	CookieHandler.setDefault(new CookieManager(null, CookiePolicy.ACCEPT_ALL));
+    	
     	Digester dig = new Digester();
         dig.push(s);
         

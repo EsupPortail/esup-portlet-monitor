@@ -1,18 +1,28 @@
+###########################
+# version 1.0.0 
+###########################
+- Modif pour uPortal 4.3
+	- Modification dans InfoController pour r√©cup√©rer les cookies
+	- Modif affichage pour responsive
+
+
+
+
 ######################################################
-# Modifications apportÈes
-# testÈ sur un esup-uportal basÈ sur uPortal 4.0.9.1
+# Modifications apport√©es
+# test√© sur un esup-uportal bas√© sur uPortal 4.0.9.1
 # sur les EsupMonitor de portail V3 et portail V4
 ######################################################
 
 - Modification du view.jsp 
 	* affichage des informations sous forme de tableau
-	* affichage du nom des personnes connectÈes seulement sur demande dans une ligne du tableau
-	* possibilitÈ de ne plus afficher la liste des personnes connectÈes
+	* affichage du nom des personnes connect√©es seulement sur demande dans une ligne du tableau
+	* possibilit√© de ne plus afficher la liste des personnes connect√©es
 - Modification des fichiers de messages	
 - Modification du controller MemoryInfo
-	* Utilisation de la wrapNumericValue dans les "setter" - anciennement utilisÈe dans la version canal pour gÈnÈrer le XML
+	* Utilisation de la wrapNumericValue dans les "setter" - anciennement utilis√©e dans la version canal pour g√©n√©rer le XML
 	* Modification de la methode wrapNumericValue en ToMegaOctet pour transformer en Mo les valeurs retournees par le flux XML 
-	* Retrait d'implÈmentation de l'interface XMLSerialisable - reliquat de la version canal
+	* Retrait d'impl√©mentation de l'interface XMLSerialisable - reliquat de la version canal
 - Modification des controllers SessionInfo et ServerInfo
-	* Retrait d'implÈmentation de l'interface XMLSerialisable - reliquat de la version canal
+	* Retrait d'impl√©mentation de l'interface XMLSerialisable - reliquat de la version canal
 - Retrait de l'interface XMLSerialisable - reliquat de la version canal
